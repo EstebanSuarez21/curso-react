@@ -1,0 +1,44 @@
+.nav__container{
+    display: flex;
+    background-color: brown;
+    
+}
+
+.nav__icon{
+    flex: 1;
+}
+
+.nav__img{
+    height: 50px;
+}
+
+.nav__ul{
+    flex: 2;
+    display: flex;
+    list-style: none;
+}
+
+.nav__li{
+    flex: 1;
+}
+
+.nav__a{
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.nav__register {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav__register>p{
+    padding: 1rem 2rem;
+    color:white;
+    font-weight: 600;
+}
