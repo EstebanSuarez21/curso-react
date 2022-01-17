@@ -1,5 +1,7 @@
 import React from 'react'
 import icon from "../../image/icon.png"
+import CardWidget from '../CardWidget/CardWidget';
+
 import "./navBar.css"
 
 function NavBar() {
@@ -19,6 +21,7 @@ function NavBar() {
             <a href="" className="nav__a">link 3</a>
           </li>
         </ul>
+        <CardWidget />
         <div className="nav__register">
             <p>Login</p>
             <p>Register</p>
