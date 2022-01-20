@@ -1,11 +1,12 @@
 import NavBar from "./components/Navbar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+
+import Counter from "./components/Counter/Counter";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting='Aca ira nuestro catalogo'/>
+      <Counter />
     </div>
   );
 }
