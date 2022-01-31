@@ -1,34 +1,39 @@
 .nav__container{
     display: flex;
-    background-color: rgb(255, 255, 255);
-    
+    background-color: #1a191d;
+    height: 3rem;
 }
 
 .nav__icon{
     flex: 1;
 }
 
-.nav__img{
-    height: 50px;
+.icon{
+    height: 40px;
+    
 }
 
 .nav__ul{
-    flex: 2;
+    flex: 3;
     display: flex;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav__li{
     flex: 1;
+    font-size: 0.8rem;
 }
 
 .nav__a{
-    padding: 1rem;
+    padding: 0.5rem;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(0, 0, 0);
+    text-align: center;
+    color: aliceblue;
 }
 
 .nav__register {
@@ -38,13 +43,13 @@
 }
 
 .nav__register>p{
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     color:rgb(56, 56, 56);
     font-weight: 600;
 }
 
 .nav__carritoContainer{
-    flex: 1;
+    flex: 0.5;
     display: flex;
     height: 50px;
 }

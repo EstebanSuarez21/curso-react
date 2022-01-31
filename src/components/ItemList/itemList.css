@@ -1,0 +1,11 @@
+.catalogoContainer {
+    
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.title{
+    text-align: center;
+    margin: 1rem;
+}

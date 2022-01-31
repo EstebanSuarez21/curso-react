@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./itemList.css"
 import Item from '../Item/Item';
 
 function ItemList({products}) {
@@ -7,7 +8,10 @@ function ItemList({products}) {
         setProducts(products)
     }, [products])
     return <div>
-        {arrayProducts.map(item => <Item product={item} key={item.id}/>)}
+        <h1 className='title'>Bienvenidos a Zona Gamer!</h1>
+        <div className='catalogoContainer'>
+        {arrayProducts.length > 0 ? arrayProducts.map(item => <Item product={item}/> ) : <h1>Cargando...</h1> }
+        </div>
     </div>;
 }
 

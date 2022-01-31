@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
-const api = new Promise((resolve, reject) => {
-    resolve()
-});
 function ItemListContainer() {
-    // Aca esta mi declaracion de la promise
-    
-    const [products, setProducts] = useState([])
-    useEffect(()=>{
+    const URL = "http://localhost:3001/productos"
+    const [productos, setProductos] = useState([])
+    const { categoryid } = useParams()
+    const api = new Promise ((resolve, reject) => {
         setTimeout(() => {
-            api.then(res => {
-                setProducts(res)
-            })
+            fetch(URL).then(data => data.json())
+            .then(response => resolve(response))
         }, 2000);
-    },)
-    return  <div>
-            {products.length > 0 ?  <ItemList products={products} /> : <h1>Loading...</h1> }
+    })
+
+    useEffect(() => {
+        api.then(res => {
+            console.log(categoryid)
+            if (categoryid) {
+                setProductos(res.filter(items => items.category == categoryid))
+            } else {
+                setProductos(res)
+            }
+
+        }).catch(err => console.log(err))
+        return setProductos([])  
+    },[categoryid])
+    return <div>
+                <ItemList products={productos}/>
             </div>;
 }
 

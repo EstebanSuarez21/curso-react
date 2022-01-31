@@ -5,6 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.cardContainer{
-    display: flex;
+body {
+    position: relative;
+    padding-bottom: 5rem;
+    min-height: 100vh;
 }

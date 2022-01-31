@@ -5,6 +5,21 @@
     margin-top: 5rem;
 }
 
+.detailImgContainer{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    
+}
+
+.detailTextContainer{
+    flex: 1;
+    padding: 2rem;
+}
+
+.detailImg{
+    max-height: 60vh;
+}
 .detailItemTitle{
     font-size: 2rem;
     margin-bottom: 1rem;
