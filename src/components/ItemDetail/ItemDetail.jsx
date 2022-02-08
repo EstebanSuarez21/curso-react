@@ -5,7 +5,7 @@ import "./itemDetail.css"
 
 function ItemDetail({products}) {
 
-    const {agregarCarrito, isInCart} = useContext(CartContext)
+    const {isInCart, removeItem} = useContext(CartContext)
 
     const [cantidad, setCantidad] = useState(1)
     const increment = () => {
@@ -18,7 +18,6 @@ function ItemDetail({products}) {
     }
 
     const hanndleClick = ()=> {
-        agregarCarrito(products, cantidad)
         isInCart(products, cantidad)
     }
 
@@ -32,7 +31,8 @@ function ItemDetail({products}) {
                     <p>{products.price} c/u</p>
                     <p>Su total es: {products.price * cantidad}</p>
                     <Counter increment={increment} decrement={decrement} cantidad={cantidad}/>
-                    <button onClick={hanndleClick}>hace algo</button>
+                    <button onClick={hanndleClick}>agregar al carrito</button>
+                    <button onClick={()=> removeItem(products)}>Remover Item</button>
                 </div>
             </div>;
 }
