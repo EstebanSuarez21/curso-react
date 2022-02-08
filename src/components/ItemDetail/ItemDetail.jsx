@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../context/cartContext';
 import Counter from '../Counter/Counter';
 import "./itemDetail.css"
 
 function ItemDetail({products}) {
+
+    const {agregarCarrito, isInCart} = useContext(CartContext)
+
     const [cantidad, setCantidad] = useState(1)
     const increment = () => {
         setCantidad((prevState) => prevState + 1)
@@ -11,6 +15,11 @@ function ItemDetail({products}) {
         if (cantidad >= 2) {
             setCantidad((prevState) => prevState - 1)
         }
+    }
+
+    const hanndleClick = ()=> {
+        agregarCarrito(products, cantidad)
+        isInCart(products, cantidad)
     }
 
     return <div className='itemDetailContainer'>
@@ -23,7 +32,7 @@ function ItemDetail({products}) {
                     <p>{products.price} c/u</p>
                     <p>Su total es: {products.price * cantidad}</p>
                     <Counter increment={increment} decrement={decrement} cantidad={cantidad}/>
-                    
+                    <button onClick={hanndleClick}>hace algo</button>
                 </div>
             </div>;
 }
