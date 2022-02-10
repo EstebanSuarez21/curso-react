@@ -10,6 +10,7 @@ import {
   Link,
   Routes
 } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/item/:id">
               <ItemDetailContainer/>
+            </Route>
+            <Route path="/cart">
+              <Cart/>
             </Route>
           </Switch>
           <Footer/>

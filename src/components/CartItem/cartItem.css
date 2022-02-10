@@ -1,0 +1,17 @@
+.cartItemContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12rem;
+    width: 60vw;
+    margin: 3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.cartItemImg{
+    height: 10rem;
+}
+
+.cartItemRight{
+    padding: 1rem;
+}

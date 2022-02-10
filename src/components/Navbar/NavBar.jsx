@@ -26,8 +26,12 @@ function NavBar() {
           <li className="nav__li">
             <Link className='nav__a' to={"/category/GyF"}>Gabinetes y Fuentes</Link>
           </li>
+          <li className='nav__li'>
+            <Link className='nav__a' to={"/cart"}>
+              <CardWidget />
+            </Link>
+          </li>
         </ul>
-        <CardWidget />
         <div className="nav__register">
             <p>Login</p>
             <p>Register</p>
