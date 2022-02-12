@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../context/cartContext';
 import Counter from '../Counter/Counter';
 import "./itemDetail.css"
 
 function ItemDetail({products}) {
 
-    const {isInCart} = useContext(CartContext)
+    const {isInCart, cart} = useContext(CartContext)
 
     const [cantidad, setCantidad] = useState(1)
     const increment = () => {
@@ -32,6 +33,9 @@ function ItemDetail({products}) {
                     <p>Su total es: {products.price * cantidad}</p>
                     <Counter increment={increment} decrement={decrement} cantidad={cantidad}/>
                     <button onClick={hanndleClick}>agregar al carrito</button>
+                    <Link to="/cart">
+                    <button disabled={cart.length <=0}>terminar compra</button>
+                    </Link>
                 </div>
             </div>;
 }

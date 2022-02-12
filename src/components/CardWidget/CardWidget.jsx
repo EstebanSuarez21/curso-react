@@ -3,11 +3,13 @@ import iconCarrito from "../../image/carrito.png"
 import { CartContext } from '../context/cartContext'
 
 function CardWidget() {
-    const {cart} = useContext(CartContext)
+    const {cart, update} = useContext(CartContext)
     const [quantity, setQuantity] = useState()
     useEffect(() => {
-        setQuantity(cart.length)
-    }, [cart])
+        let itemsTotales = 0
+        cart.map((item => itemsTotales += item.cantidad))
+        setQuantity(itemsTotales)
+    },[update])
     return (
         <div className='nav__carritoContainer'>
             <img src={iconCarrito} className='nav__carrito' alt="" />
