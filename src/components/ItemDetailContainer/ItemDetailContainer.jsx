@@ -17,29 +17,13 @@ function ItemDetailContainer() {
     })
 
     useEffect(() => {
-        console.log(id)
         const db = getFirestore()
-        let productsCollection;
-        if (id) {
-            productsCollection = db.collection("productos").where("id", "==", String(id))
-        } else {
-            productsCollection = db.collection("productos")
-        }
-        
-        const getDataFromFirestore = async () => {
-            try{
-                const response = await productsCollection.get();
-                setProductos(response.docs.map((doc) => ({...doc.data(), id: doc.id})))
-            }
-            finally{
-                console.log("patata")
-            }
-        }
-        getDataFromFirestore()
-        // api.then(res => {
-        //     setProductos(res.find(item => item.id==id))
-        //     console.log(api.state)
-        // }).catch(err => console.log(err))
+        const productsCollection = db.collection("productos")
+        const selectedProduct = productsCollection.doc(id)
+
+        selectedProduct.get().then((response) => {
+            setProductos({...response.data(), id: response.id});
+        })
     },[id]) //id
 return <div>
             <ItemDetail products={productos}/>
