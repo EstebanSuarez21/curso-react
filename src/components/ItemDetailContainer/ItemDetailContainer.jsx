@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-
-
+import { getFirestore } from "../../firebase"
 
 
 function ItemDetailContainer() {
@@ -18,12 +17,30 @@ function ItemDetailContainer() {
     })
 
     useEffect(() => {
-        console.log(api.state)
-        api.then(res => {
-            setProductos(res.find(item => item.id==id))
-            console.log(api.state)
-        }).catch(err => console.log(err))
-    },[id])
+        console.log(id)
+        const db = getFirestore()
+        let productsCollection;
+        if (id) {
+            productsCollection = db.collection("productos").where("id", "==", String(id))
+        } else {
+            productsCollection = db.collection("productos")
+        }
+        
+        const getDataFromFirestore = async () => {
+            try{
+                const response = await productsCollection.get();
+                setProductos(response.docs.map((doc) => ({...doc.data(), id: doc.id})))
+            }
+            finally{
+                console.log("patata")
+            }
+        }
+        getDataFromFirestore()
+        // api.then(res => {
+        //     setProductos(res.find(item => item.id==id))
+        //     console.log(api.state)
+        // }).catch(err => console.log(err))
+    },[id]) //id
 return <div>
             <ItemDetail products={productos}/>
         </div>;

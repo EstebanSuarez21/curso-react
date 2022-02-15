@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from "../../firebase"
 
 function ItemListContainer() {
-    const URL = "http://localhost:3001/productos"
     const [productos, setProductos] = useState([])
     const { categoryid } = useParams()
-    const api = new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            fetch(URL).then(data => data.json())
-            .then(response => resolve(response))
-        }, 2000);
-    })
-
+    
     useEffect(() => {
-        api.then(res => {
-            console.log(categoryid)
-            if (categoryid) {
-                setProductos(res.filter(items => items.category == categoryid))
-            } else {
-                setProductos(res)
+        const db = getFirestore()
+        let productsCollection;
+        if (categoryid) {
+            productsCollection = db.collection("productos").where("category", "==", String(categoryid))
+        } else {
+            productsCollection = db.collection("productos")
+        }
+        
+        const getDataFromFirestore = async () => {
+            try{
+                const response = await productsCollection.get();
+                setProductos(response.docs.map((doc) => ({...doc.data(), id: doc.id})))
             }
-
-        }).catch(err => console.log(err))
+            finally{
+                console.log("patata")
+            }
+        }
+        getDataFromFirestore()
         return setProductos([])  
     },[categoryid])
     return <div>
