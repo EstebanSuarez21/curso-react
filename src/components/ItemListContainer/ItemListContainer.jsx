@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { getFirestore } from "../../firebase"
+import Test from '../Test/Test';
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([])
@@ -30,6 +31,7 @@ function ItemListContainer() {
     },[categoryid])
     return <div>
                 <ItemList products={productos}/>
+                <Test/>
             </div>;
 }
 
