@@ -11,6 +11,7 @@ import {
   Routes
 } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
+import CartTicket from "./components/CartTicket/CartTicket";
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/item/:id">
               <ItemDetailContainer/>
+            </Route>
+            <Route path="cartTicket/orderId">
+              <CartTicket/>
             </Route>
             <Route path="/cart">
               <Cart/>
