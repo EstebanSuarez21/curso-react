@@ -9,12 +9,6 @@ function ItemDetailContainer() {
     const [productos, setProductos] = useState([])
     
     const {id} = useParams()
-    const api = new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            fetch(URL).then(data => data.json())
-            .then(response => resolve(response))
-        }, 2000);
-    })
 
     useEffect(() => {
         const db = getFirestore()

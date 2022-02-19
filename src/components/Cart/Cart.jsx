@@ -19,8 +19,9 @@ function Cart() {
         const db = getFirestore()
         db.collection("orders")
         .add(newOrder)
-        .then((res) => navigate(`cartTicket/${res.id}`))
+        .then((res) => navigate(`/cartTicket/${res.id}`))
     }
+
     const newOrder = {
         buyer: {
             "nombre" : clientName,

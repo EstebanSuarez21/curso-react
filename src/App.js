@@ -5,9 +5,7 @@ import Footer from "./components/Footer/Footer";
 import { CartProvider } from "./components/context/cartContext";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
@@ -20,23 +18,13 @@ function App() {
       <CartProvider>
         <Router>
           <NavBar/>
-          <Switch>
-          <Route exact path="/">
-              <ItemListContainer/>
-            </Route>
-            <Route path="/category/:categoryid">
-              <ItemListContainer/>
-            </Route>
-            <Route path="/item/:id">
-              <ItemDetailContainer/>
-            </Route>
-            <Route path="cartTicket/orderId">
-              <CartTicket/>
-            </Route>
-            <Route path="/cart">
-              <Cart/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer/>}/>
+            <Route path="/category/:categoryid" element={<ItemListContainer/>}/>
+            <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/cartTicket/:orderId" element={<CartTicket/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+          </Routes>
           <Footer/>
         </Router>
       </CartProvider>
