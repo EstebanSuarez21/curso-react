@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CartTicket from "./components/CartTicket/CartTicket";
+import Test from "./components/Test/Test";
 
 function App() {
 
@@ -21,11 +22,13 @@ function App() {
           <Routes>
             <Route exact path="/" element={<ItemListContainer/>}/>
             <Route path="/category/:categoryid" element={<ItemListContainer/>}/>
+            <Route path="/category/:categoryid/:categoryid2" element={<ItemListContainer/>}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
             <Route path="/cartTicket/:orderId" element={<CartTicket/>}/>
             <Route path="/cart" element={<Cart/>}/>
           </Routes>
           <Footer/>
+          <Test/>
         </Router>
       </CartProvider>
     </div>

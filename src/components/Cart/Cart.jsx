@@ -10,6 +10,7 @@ function Cart() {
     const [clientName, setClientName] = useState("")
     const [clientPhone, setClientPhone] = useState("")
     const [clientEmail, setClientEmail] = useState("")
+
     let navigate = useNavigate()
     let totalCost = 0 
     cart.map(item => totalCost += item.cantidad * item.producto.price)

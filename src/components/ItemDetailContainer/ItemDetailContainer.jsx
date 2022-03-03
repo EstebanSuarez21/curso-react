@@ -5,7 +5,6 @@ import { getFirestore } from "../../firebase"
 
 
 function ItemDetailContainer() {
-    const URL = "http://localhost:3001/productos"
     const [productos, setProductos] = useState([])
     
     const {id} = useParams()

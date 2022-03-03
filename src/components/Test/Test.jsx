@@ -3,96 +3,19 @@ import { getFirestore } from '../../firebase'
 
 const products = [
     {
-        "name": "Mother Asus Strix B550-E Gaming AM4",
-        "description": "Las tarjetas madre de la serie ROG Strix B550 Gaming ofrecen buena parte de las características que puedes encontrar en la serie de gama alta ROG Strix X570 Gaming, como por ejemplo PCIe® 4.0. Con un suministro de energía potente y una refrigeración eficaz, la serie ROG Strix B550 Gaming está optimizada para las CPU AMD Ryzen™ de 3, 4 y 5ª Gen.",
-        "price": 38850,
-        "chipset": "AM4",
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2022/01/asus-placa-base-rog-strix-b550-e-gaming.jpg",
-        "category":"MyP"
-    },{
-        "name": "Asus Strix OC V2 RTX3060 12GB",
+        "name": "Mother Asus Prime A320M-K AM4",
         "description": [
-            "Graphic Engine NVIDIA® GeForce RTX™ 3060",
-            "Bus Standard PCI Express 4.0",
-            "OpenGL OpenGL®4.6",
-            "Video Memory 12GB GDDR6",
-            "Engine Clock OC Mode  1912 MHz (Boost Clock) Gaming Mode  1882  MHz (Boost Clock)",
-            "CUDA Core 3584",
-            "Memory Speed 15 Gbps", 
-            "Memory Interface 192-bit"
+            "5X Protection II – Avanzadas salvaguardas de hardware para protección general",
+            "Iluminación LED: Efectos de iluminación en la línea de canal de audio",
+            "M.2 nativo: Velocidades de almacenamiento ultra rápidas",
+            "Controles one-stop: Aclamado UEFI BIOS con EZ Flash 3"
         ],
-        "TDP": 65,
-        "price": 188700,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/11/asus_rtx3060ti_rog_strix_oc_rgb_lhr_-_2-500x500.jpg",
-        "category":"Vga"
-        
+        "price": 8120,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2020/10/mother-amd-am4-asus-prime-a320m-k.jpg",
+        "category":"MyP",
+        "category2": "motAmd"
     },{
-        "name": "Micro AMD Ryzen 5 5600X AM4",
-        "description": [
-            "núcleos de CPU 6",
-            "de 12 hilos",
-            "Reloj base 3.7GHz",
-            "Reloj de aumento máx. Hasta 4.6GHz",
-            "Caché L2 total 3MB"
-        ],
-        "chipset": "AM4",
-        "TDP": 65,
-        "price": 44400,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2020/11/5600x.jpg",
-        "category":"MyP"
-        
-    },{
-        "name": "Memoria Hp V8 RGB 8GB DDR4 3000Mhz",
-        "description": [
-            "Capacidad : 8GB",
-            "Interfaz de memoria : DDR4",
-            "Velocidad del Bus : 3000MHZ",
-            "RGB"
-        ],
-        "price": 6549,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/03/hpv83000.jpg",
-        "category":"AyR"
-        
-    },{
-        "name": "Gabinete DeepCool Matrexx 70 RGB 3F",
-        "description": [
-            "3* Ventiladores CF 120 RGB y 1 tira LED RGB preinstalados y sincronizados",
-            "El sistema ADD-RGB incluido se puede controlar con el botón del case o la placa base",
-            "Case de torre mediana grande que permite hasta una placa base E-ATX (330 mm).",
-            "Compartimento de torre de 228 mm de ancho con espacio libre de 30 mm para el manejo de cables.",
-            "Paneles frontales y laterales de fácil instalación."
-        ],
-        "price": 19092,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2020/10/01-1.jpg",
-        "category":"GyF"
-        
-    },{
-        "name": "Fuente Gigabyte GP-P850GM 850W 80+Gold",
-        "description": [
-            "80 PLUS Gold certified",
-            "Fully modular design",
-            "120mm Smart Hydraulic Bearing (HYB) Fan",
-            "Powerful single +12V rail",
-            "OVP/OPP/SCP/UVP/OCP/OTP protection"
-        ],
-        "price": 23088,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/05/P850GM3.jpg",
-        "category":"GyF"
-        
-    },{
-        "name": "SSD W.D. Blue SN550 500GB M.2 Pcie",
-        "description": [
-            "Capacidad 500 GB",
-            "Interfaz PCIe",
-            "Dimensiones (largo, ancho y alto) 3.15″ x 0.87″ x 0.09″",
-            "Rendimiento de lectura secuencial 2400MB/s",
-            "Rendimiento de escritura secuencial 1750MB/s"
-        ],
-        "price": 7770,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/07/wd-blue-sn550-nvme-ssd-front-500gb.jpg",
-        "category":"AyR"
-    },{
-        "name": "Vga Msi Gaming X RX6600XT 8GB GDDR6",
+        "name": "Vga Asus Strix OC RX6600XT 8GB GDDR6",
         "description": [
             "Hasta 2607 MHz / 16 Gbps",
             "GDDR6 de 8 GB",
@@ -101,10 +24,86 @@ const products = [
             "TORX Fan 4.0",
             "Mystic Light le brinda un control completo de la iluminación RGB"
         ],
-        "TDP": 160,
-        "price": 144300,
-        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/08/3426-msi-radeon-rx-6600-xt-gaming-x-8gb-gddr6-mejor-precio.jpg",
-        "category":"Vga"
+        "price": 133400,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2022/01/90YV0GN0-MTAA00b.jpg",
+        "category":"Vga",
+        "category2":"VgaAmd"
+    },{
+        "name": "Vga Asus Dual OC RX6700XT 12GB GDDR6",
+        "description": [
+            "Graphic Engine AMD Radeon RX 6700 XT",
+            "Bus Standard PCI Express 4.0",
+            "OpenGL 4.6",
+            "Video Memory 12GB GDDR6",
+            "Engine Clock OC mode : up to 2622 MHz",
+            "Stream Processors 2560",
+            "Memory Speed 16 Gbps",
+            "Memory Interface 192-bit"
+        ],
+        "price": 208800,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2022/01/6700XTDUALOC.jpeg",
+        "category":"Vga",
+        "category2": "VgaAmd"
+    },{
+        "name": "Vga Gigabyte Eagle OC RTX3060 12GB LHR",
+        "description": [
+            "NVIDIA Ampere Streaming Multiprocessors",
+            "Integrated with 12GB GDDR6 192-bit memory interface",
+            "RGB Fusion 2.0",
+            "CORE CLOCK 1807 MHz"
+        ],
+        "price": 156600,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/04/5751-gigabyte-geforce-rtx-3060-eagle-oc-12gb-gddr6c.jpg",
+        "category":"Vga",
+        "category2": "VgaNvidia"
+    },{
+        "name": "Vga Gigabyte Vision OC RTX3060 12GB LHR",
+        "description": [
+            "Graphics Processing GeForce RTX™ 3060",
+            "Core Clock 1837 MHz (Reference Card: 1777 MHz)",
+            "CUDA® Cores 3584",
+            "Memory Clock 15000 MHz",
+            "Memory Size 12 GB",
+            "Memory Type GDDR6",
+            "Memory Bus 192 bit"
+        ],
+        "price": 162400,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2022/02/N3060VISION-OC-12GDC.jpg",
+        "category":"Vga",
+        "category2": "VgaNvidia"
+    },{
+        "name": "Vga Asus TUF OC V2 RTX3060 12GB LHR",
+        "description": [
+            "Graphic Engine NVIDIA® GeForce RTX™ 3060",
+            "Bus Standard PCI Express 4.0",
+            "OpenGL OpenGL®4.6",
+            "Video Memory 12GB GDDR6",
+            "Engine Clock OC Mode – 1882 MHz",
+            "CUDA Core 3584",
+            "Memory Speed 15 Gbps",
+            "Memory Interface 192-bit"
+        ],
+        "price": 168200,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/11/90YV0G1A-M0AA002.jpg",
+        "category":"Vga",
+        "category2": "VgaNvidia"
+        
+    },{
+        "name": "Vga Asus Strix LC RTX3080TI 12GB GDDR6X",
+        "description": [
+            "Graphic Engine NVIDIA® GeForce RTX™ 3080 Ti",
+            "Bus Standard PCI Express 4.0",
+            "OpenGL OpenGL®4.6",
+            "Video Memory 12GB GDDR6X",
+            "Engine Clock OC mode : 1695 MHz (Boost Clock) Gaming mode : 1665 MHz (Boost Clock)",
+            "CUDA Core 10240",
+            "Memory Speed 19 Gbps",
+            "Memory Interface 384-bit"
+        ],
+        "price": 440800,
+        "picture":"https://hardcorecomputacion.com.ar/wp-content/uploads/2021/11/RTX3080TILC.jpg",
+        "category":"Vga",
+        "category2":"VgaNvidia"
     }
 ]
 
