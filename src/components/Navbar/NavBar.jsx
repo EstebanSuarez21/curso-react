@@ -10,15 +10,17 @@ import useScreenSize from '../Hooks/useScreenSize';
 function NavBar() {
   const [sideBar, setSideBar] = useState(false)
   const [intento, setIntento] = useState([])
+  const [button, setButton] = useState(false)
   let location = useLocation().pathname
 
   const hanndleClick = () =>{
     setSideBar(!sideBar)
+    toggleMenu()
   }
   
-  let withScreen = useScreenSize()
+  let widthScreen = useScreenSize()
   const [linksCat, setLinksCat] = useState([])
-  console.log(withScreen)
+  console.log(widthScreen)
   useEffect(() => {
     const db = getFirestore()
     const linksCollection = db.collection("links")
@@ -60,37 +62,58 @@ function NavBar() {
         break;
     }
   }, [location])
+  function classHandler(px){
+    if (px < 1080 && px > 700) {
+      console.log('nav__container laptop')
+      return 'laptop'
+    } else if (px < 700 && px > 500) {
+      console.log('nav__container tablet')
+      return 'tablet'
+    }else if (px < 500) {
+      console.log('nav__container big-phone')
+      return 'big-phone'
+    } else {
+      return ''
+    }
+  }
+
+  function toggleMenu() {
+    setButton(!button)
+  }
   
     return (
-      <nav className="nav__container">
+      <nav className={`${"nav__container " + classHandler(widthScreen)}`}>
         <SideBar props={sideBar} links={intento}/>
         <div className="nav__icon">
           <Link to="/">
             <img src={icon} className='icon' alt="" />
           </Link>
         </div>
-        <ul className='nav__ul'>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/MyP"}>Motherboards y Procesadores</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/Vga"}>Placas de video</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/AyR"}>Almacenamiento y Ram</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/GyF"}>Gabinetes y Fuentes</Link>
-          </li>
-          <li className='nav__li' onClick={hanndleClick}>
-            <Link className='nav__a' to={"/cart"}>
-              <CardWidget />
-            </Link>
-          </li>
-        </ul>
-        <div className="nav__register">
-            <p>Login</p>
-            <p>Register</p>
+        <button onClick={toggleMenu} className={widthScreen < 700? 'hamburguesa': 'none' }>hamburguesa</button>
+        <div className={`${button?'menu__container active':' menu__container ' + classHandler(widthScreen)}`}>
+          <ul className={"nav__ul " + classHandler(widthScreen)}>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/MyP"}>Motherboards y Procesadores</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/Vga"}>Placas de video</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/AyR"}>Almacenamiento y Ram</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/GyF"}>Gabinetes y Fuentes</Link>
+            </li>
+            <li className='nav__li' onClick={hanndleClick}>
+              <Link className='nav__a' to={"/cart"}>
+                <CardWidget />
+              </Link>
+            </li>
+          </ul>
+          <div className={`${"nav__register " + classHandler(widthScreen)}`}>
+              <p>Login</p>
+              <p>Register</p>
+          </div>
         </div>
       </nav>
     );

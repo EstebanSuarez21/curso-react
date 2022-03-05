@@ -2,6 +2,8 @@
     display: flex;
     background-color: #1a191d;
     height: 3rem;
+    max-width: 100vw;
+    flex-wrap: wrap;
 }
 
 .nav__icon{
@@ -14,8 +16,6 @@
 }
 
 .nav__ul{
-    flex: 3;
-    display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
@@ -66,3 +66,40 @@
     display: none;
 }
 
+.hamburguesa{
+    background-color: saddlebrown;
+}
+/* ---------------- */
+/* responsive */
+.nav__container.laptop{}
+.nav__container.tablet{}
+.nav__container.big-phone{}
+
+
+.nav__ul.laptop{
+    display: flex; 
+}
+
+.menu__container.laptop{
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    background-color: rgb(101, 160, 212);
+}
+.menu__container{
+    display: none;
+}
+.menu__container.active {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    z-index: 10;
+    width: 100%;
+    align-items: center;
+}
+
+.nav__ul.big-phone{}
+
+.hamburguesa.tablet,.hamburguesa.big-phone{
+    display: block;
+}
