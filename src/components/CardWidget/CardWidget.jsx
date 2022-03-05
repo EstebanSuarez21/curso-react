@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import iconCarrito from "../../image/carrito.png"
 import { CartContext } from '../context/cartContext'
+import "./cardWidget.css"
 
 function CardWidget() {
     const {cart, update} = useContext(CartContext)

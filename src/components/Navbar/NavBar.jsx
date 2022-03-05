@@ -15,6 +15,7 @@ function NavBar() {
 
   const hanndleClick = () =>{
     setSideBar(!sideBar)
+    toggleMenu()
   }
   
   let widthScreen = useScreenSize()
@@ -89,28 +90,32 @@ function NavBar() {
           </Link>
         </div>
         <button onClick={toggleMenu} className={widthScreen < 700? 'hamburguesa': 'none' }>hamburguesa</button>
-        <ul className={`${button?'nav__ul active':' nav__ul ' + classHandler(widthScreen)}`}>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/MyP"}>Motherboards y Procesadores</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/Vga"}>Placas de video</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/AyR"}>Almacenamiento y Ram</Link>
-          </li>
-          <li className="nav__li" onClick={hanndleClick}>
-            <Link className='nav__a' to={"/category/GyF"}>Gabinetes y Fuentes</Link>
-          </li>
-          <li className='nav__li' onClick={hanndleClick}>
-            <Link className='nav__a' to={"/cart"}>
-              <CardWidget />
-            </Link>
-          </li>
-        </ul>
-        <div className={`${"nav__register " + classHandler(widthScreen)}`}>
-            <p>Login</p>
-            <p>Register</p>
+
+        <div className={`${button?'menu__container active':' menu__container ' + classHandler(widthScreen)}`}>
+          <ul className={"nav__ul " + classHandler(widthScreen)}>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/MyP"}>Motherboards y Procesadores</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/Vga"}>Placas de video</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/AyR"}>Almacenamiento y Ram</Link>
+            </li>
+            <li className="nav__li" onClick={hanndleClick}>
+              <Link className='nav__a' to={"/category/GyF"}>Gabinetes y Fuentes</Link>
+            </li>
+            <li className='nav__li' onClick={hanndleClick}>
+              <Link className='nav__a' to={"/cart"}>
+                <CardWidget />
+              </Link>
+            </li>
+          </ul>
+          <div className={`${"nav__register " + classHandler(widthScreen)}`}>
+              <p>Login</p>
+              <p>Register</p>
+          </div>
+
         </div>
       </nav>
     );

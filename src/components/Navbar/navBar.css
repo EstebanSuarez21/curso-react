@@ -16,8 +16,6 @@
 }
 
 .nav__ul{
-    flex: 3;
-    display: none;
     list-style: none;
     justify-content: center;
     align-items: center;
@@ -73,20 +71,31 @@
 }
 /* ---------------- */
 /* responsive */
-.nav__container.laptop{}
-.nav__container.tablet{}
-.nav__container.big-phone{}
+
 
 
 .nav__ul.laptop{
-   display: flex; 
+    display: flex; 
 }
-.nav__ul.active{
+
+.menu__container.laptop{
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    background-color: rgb(101, 160, 212);
+}
+.menu__container{
+    display: none;
+}
+.menu__container.active {
     display: flex;
     flex-direction: column;
     background-color: black;
+    z-index: 10;
+    width: 100%;
+    align-items: center;
 }
-.nav__ul.big-phone{}
+
 
 .hamburguesa.tablet,.hamburguesa.big-phone{
     display: block;
