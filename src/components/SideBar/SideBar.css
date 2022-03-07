@@ -3,8 +3,8 @@
     transform: translateX(0);
     position:absolute;
     left: 0;
-    top: 3rem;
-    background-color: aqua;
+    top: 4rem;
+    background-color: white;
 }
 
 .sidebar__container.active{
@@ -12,11 +12,21 @@
 }
 .sidebar__wrapper{
     height: calc(100vh - 3rem);
-    width: 20vw;
+    width: 70vw;
     position:relative;
+    padding-top: 1rem;
+    text-align: center;
 }
 .toggle_sidebar{
     position: absolute;
     top: 0;
     right: -10px;
+    width: 30px;
+}
+.sidebar__li{
+    padding: 0.5rem;
+}
+.sidebar__li>a{
+    color: black;
+    text-decoration: none;
 }

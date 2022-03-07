@@ -19,3 +19,14 @@
 .cardImgItem{
     width: 90%;
 }
+
+/* responsive */
+
+.cardItem.big-phone{
+    min-width: 80%;
+}
+
+.cardItem.tablet{
+    width: 40%;
+}
+
